@@ -12,7 +12,7 @@ from app.utils.extract_form_type import identify_form
 
 
 class PdfUpload(Resource):
-    # @jwt_required()
+    @jwt_required()
     def post(self):
         try:
             if "file" not in request.files:

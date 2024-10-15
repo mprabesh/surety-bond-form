@@ -15,7 +15,7 @@ from app.assets.filldata import fields_data
 
 
 class PdfProcess(Resource):
-    # @jwt_required()
+    @jwt_required()
     def get(self):
         """List all files in the uploads directory."""
         try:
@@ -26,7 +26,7 @@ class PdfProcess(Resource):
         except Exception as e:
             return {"message": f"Error retrieving files: {str(e)}"}, 500
 
-    # @jwt_required()
+    @jwt_required()
     def post(self):
         try:
             file_name = request.json.get("file_name")
